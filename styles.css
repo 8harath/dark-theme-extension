@@ -8,11 +8,78 @@ body {
 
 .container {
     padding: 20px;
+    min-width: 300px;
 }
 
 h1, h2 {
     margin: 0 0 10px;
     font-weight: normal;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+}
+
+.toggle-label {
+    margin-left: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider-toggle:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-toggle {
+    background-color: #007bff;
+}
+
+input:checked + .slider-toggle:before {
+    transform: translateX(26px);
+}
+
+input:disabled + .slider-toggle {
+    background-color: #ddd;
+    cursor: not-allowed;
 }
 
 .slider-container {
